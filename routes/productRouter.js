@@ -1,15 +1,15 @@
 const router = require('express').Router()
-
+const productCtrl = require('../controllers/productCtrl')
 
 
 router.route('/products')
-    .get()
-    .post()
+    .get(productCtrl.getProducts)
+    .post(productCtrl.createProduct)
 
 
 router.route('/products/:id')
-    .delete()
-    .put()
+    .delete(productCtrl.deleteProduct)
+    .put(productCtrl.updateProduct)
 
 
 
